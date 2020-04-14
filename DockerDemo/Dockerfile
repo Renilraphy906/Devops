@@ -1,4 +1,8 @@
-FROM openjdk:8-jdk-alpine
-ADD target/docker-demo.jar docker-demo.jar
-EXPOSE 8085
-ENTRYPOINT ["java","-jar", "docker-demo.jar"]
+FROM maven:3.5.2-jdk-8-alpine
+RUN mkdir /build
+RUN mkdir /volume
+COPY pom.xml /build/
+COPY src /build/src/
+WORKDIR /build/
+RUN mvn package
+RUN ls /build/target
