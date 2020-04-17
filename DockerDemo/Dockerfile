@@ -1,3 +1,4 @@
+
 FROM maven:3.5.2-jdk-8-alpine
 RUN mkdir /build
 RUN mkdir /volume
@@ -6,3 +7,11 @@ COPY src /build/src/
 WORKDIR /build/
 RUN mvn package
 RUN ls /build/target
+
+
+
+
+
+
+
+

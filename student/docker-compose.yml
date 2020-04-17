@@ -9,17 +9,17 @@ services:
     ports:
       - "8001:8001"
     networks:
-      - employee-mysql
-    depends_on:
-      - mysqldb
-      
-mysqldb:
-    image: mysql:8
-    networks:
       - student-mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=bootdb  
+    depends_on:
+      - mysql
+      
+  mysql:
+      image: mysql:8
+      networks:
+        - student-mysql
+      environment:
+        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_DATABASE=bootdb  
 
 networks:
   student-mysql:
