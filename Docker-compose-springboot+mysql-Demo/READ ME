@@ -1,0 +1,7 @@
+-> This is a basic spring boot + mysql application which can deploy using Docker
+-> src : includes the source code of the application
+-> infra : includes the infrastucture of application 
+
+##Project Structure
+  
+  
