@@ -19,12 +19,12 @@ services:
   mysqldb:
     image: mysql:8
     networks:
-      - sprinboot-mysql
+      - springboot-mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=bootdb
       - MYSQL_USER=root
       - MYSQL_PASSWORD=root
 networks:
-  student-mysql:
+  springboot-mysql:
     driver: bridge
