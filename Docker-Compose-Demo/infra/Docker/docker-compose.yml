@@ -5,7 +5,7 @@ services:
     build: 
       context: ../../
       dockerfile: infra/Docker/services/springboot+mysql_backend/Dockerfile
-    container_name: springboot_mysql
+    container_name: docker_springboot_mysql
     restart: unless-stopped
     volumes:
       - .:/volume
