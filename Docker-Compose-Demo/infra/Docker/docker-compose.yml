@@ -3,23 +3,23 @@ version: '3'
 services:
   springboot:
     build: 
-      context: ../ ../
-      dockerfole: infra/Docker/services/springboot+mysql_backend/Dockerfile
-    container_name: springboot+mysql
-    image: renilraphy33/springboot+mysql:1
+      context: ../../
+      dockerfile: infra/Docker/services/springboot+mysql_backend/Dockerfile
+    container_name: springboot_mysql
+    restart: unless-stopped
     volumes:
-      - appdata:/volume
+      - .:/volume
     ports:
       - "8001:8001"
     networks:
-      - student-mysql
+      - springboot-mysql
     depends_on:
       - mysqldb
       
   mysqldb:
     image: mysql:8
     networks:
-      - student-mysql
+      - sprinboot-mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=bootdb

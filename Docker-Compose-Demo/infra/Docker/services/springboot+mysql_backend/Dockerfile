@@ -1,6 +1,6 @@
 FROM maven:3.5.2-jdk-8-alpine
 
-MAINTAINER="Renil Raphy"
+LABEL MAINTAINER="Renil Raphy"
 
 WORKDIR /build/
 
