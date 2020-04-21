@@ -53,7 +53,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>student-jdbc</finalName>
+		<finalName>docker-demo</finalName>
 	</build>
 
 </project>

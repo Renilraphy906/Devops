@@ -1,27 +1,30 @@
 version: '3'
 
 services:
-  web:
-    build: .
-    command: java -jar /build/target/student-jdbc.jar
+  springboot:
+    build: 
+      context: ../ ../
+      dockerfole: infra/Docker/services/springboot+mysql_backend/Dockerfile
+    container_name: springboot+mysql
+    image: renilraphy33/springboot+mysql:1
     volumes:
-      - .:/volume
+      - appdata:/volume
     ports:
       - "8001:8001"
     networks:
       - student-mysql
     depends_on:
-      - mysql
+      - mysqldb
       
-  mysql:
+  mysqldb:
     image: mysql:8
     networks:
       - student-mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=bootdb
-      - MYSQL_USER=mysqldbuser
-      - MYSQL_PASSWORD=mysqldbpassword
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
 networks:
   student-mysql:
     driver: bridge

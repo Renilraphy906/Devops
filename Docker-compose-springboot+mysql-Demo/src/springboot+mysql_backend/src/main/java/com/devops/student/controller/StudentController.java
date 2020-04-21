@@ -15,7 +15,7 @@ import com.devops.student.domain.Student;
 import com.devops.student.service.StudentService;
 
 @RestController
-@RequestMapping("/student")
+@RequestMapping("/docker_demo")
 public class StudentController {
 
 	@Autowired
@@ -38,7 +38,7 @@ public class StudentController {
 		
 	}
 	
-	@GetMapping("/find")
+	@GetMapping("/findall")
 	public List<Student> findStudent(){
 		return studentService.findAll();
 		
